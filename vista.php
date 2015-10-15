@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>Google Drive Api</title>
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-        <link href="estilo.css" rel="stylesheet">
+        <link href="css/estilo.css" rel="stylesheet">
     </head>
     <body>
     <header>
@@ -18,9 +18,16 @@
             foreach ($archivos->getItems() as $e) {
                 $titulo = $e->getTitle();
                 $url = $e->getwebContentLink();
-                    echo "<br>";
+                $mime = $e->getMimeType();
+                $id = $e->getId();
+                    
+                echo "<br>";
+                if ($mime == "application/vnd.google-apps.folder"){
+                    print ('<a href ="explore.php?fid='.$id.'">'.$titulo.'</a>');
+                }else{
                     print ("<a href =".$url.">".$titulo."</a>");
-                    echo "<br>";
+                }
+                echo "<br>";
             }          
         }
         ?>
