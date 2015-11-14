@@ -8,7 +8,7 @@
     </head>
     <body>
     <header>
-        <div id="titulo">ApiDrive</div>
+        <div id="titulo">Google Drive Explorer</div>
     </header>
     <div  id="lista">
         <?php
