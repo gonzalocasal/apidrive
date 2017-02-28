@@ -11,8 +11,8 @@ $parameters['q'] ='"'.$folder.'" in parents and trashed=false';
 $client->setAccessToken($_SESSION['accessToken']);
 $service = new Google_DriveService($client);
 
-$archivos = $service->files->listFiles($parameters);
-$resultados = array_merge($resultados, $archivos->getItems());
+$files = $service->files->listFiles($parameters);
+$results = array_merge($results, $files->getItems());
 
-include 'vista.php';
+include 'view.php';
 ?>
