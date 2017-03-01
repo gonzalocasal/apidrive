@@ -12,20 +12,20 @@
     </header>
     <div  id="lista">
         <?php
-        if (count($archivos->getItems()) == 0) {
+        if (count($files->getItems()) == 0) {
              print "No existen archivos.\n";
         } else {
-            foreach ($archivos->getItems() as $e) {
-                $titulo = $e->getTitle();
+            foreach ($files->getItems() as $e) {
+                $title = $e->getTitle();
                 $url = $e->getwebContentLink();
                 $mime = $e->getMimeType();
                 $id = $e->getId();
                     
                 echo "<br>";
                 if ($mime == "application/vnd.google-apps.folder"){
-                    print ('<a href ="explore.php?fid='.$id.'">'.$titulo.'</a>');
+                    print ('<a href ="explore.php?fid='.$id.'">'.$title.'</a>');
                 }else{
-                    print ("<a href =".$url.">".$titulo."</a>");
+                    print ("<a href =".$url.">".$title."</a>");
                 }
                 echo "<br>";
             }          
